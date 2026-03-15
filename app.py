@@ -1,9 +1,9 @@
-import random
+'''import random
 import string
 
 length=int(input("Enter the length of the password: " ))
 
-print('''Enter the choice for the password: 1. letters /n 2. Digits /n 3. special characters /n 4. Exit''')
+print("Enter the choice for the password: 1. letters /n 2. Digits /n 3. special characters /n 4. Exit")
 
 characters=""
 while True:
@@ -23,5 +23,5 @@ for i in range(length):
     randomchar=random.choice(characters)
     password.append(randomchar)
 print("Generated password: "+"".join(password))
-    
+'''
     

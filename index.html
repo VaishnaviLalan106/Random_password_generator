@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="app1.py" />
+    <style>
+    input {
+        margin: 5px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid #100a0a;
+        padding: 10px;
+        hover {
+            background-color: #4ba0a8;
+            color: white;
+        }};
+    * body {
+        background-color: bisque;
+        font: Arial, Helvetica, sans-serif;
+        align-items: center;
+        
+    }
+  </style>
+  </head>
+  
+  <body>
+    <h3>Password Generator</h3>
+    <label for="length">Password Length:</label>
+    <input
+      type="number"
+      id="length"
+      name="length"
+      min="2"
+      max="128"
+      value="2"
+    />
+    <br />
+    <label for="includeUppercase">Include Uppercase Letters:</label>
+    <input
+      type="checkbox"
+      id="includeUppercase"
+      name="includeUppercase"
+      checked
+    />
+    <br />
+    <label for="includeLowercase">Include Lowercase Letters:</label>
+    <input
+      type="checkbox"
+      id="includeLowercase"
+      name="includeLowercase"
+      checked
+    />
+    <br />
+    <label for="includeNumbers">Include Numbers:</label>
+    <input type="checkbox" id="includeNumbers" name="includeNumbers" checked />
+    <br />
+    <label for="includeSymbols">Include Symbols:</label>
+    <input type="checkbox" id="includeSymbols" name="includeSymbols" checked />
+    <br />
+    <button id="generate">Generate Password</button>
+    <p id="result"></p>
+    <script>
+        document.getElementById("generate").addEventListener("click", function () {
+            const length = parseInt(document.getElementById("length").value);
+            const includeUppercase = document.getElementById("includeUppercase").checked;
+            const includeLowercase = document.getElementById("includeLowercase").checked;
+            const includeNumbers = document.getElementById("includeNumbers").checked;
+            const includeSymbols = document.getElementById("includeSymbols").checked;
+    
+            let characters = "";
+            if (includeUppercase) characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            if (includeLowercase) characters += "abcdefghijklmnopqrstuvwxyz";
+            if (includeNumbers) characters += "0123456789";
+            if (includeSymbols) characters += "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+    
+            let password = "";
+            for (let i = 0; i < length; i++) {
+            password += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+    
+            document.getElementById("result").textContent = password;
+        });
+    </script>
+  </body>
+</html>
