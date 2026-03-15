@@ -1,3 +1,5 @@
+# Live version 
+[Generate here!](https://random-password-generator-murex-eta.vercel.app/)
 # Random Password Generator
 
 This is a small project I created while learning programming.  
