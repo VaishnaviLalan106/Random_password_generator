@@ -8,3 +8,12 @@ if __name__=="__main__":
    print(s2)
    s3=string.punctuation
    print(s3)
+   length=int(input("Enter the length of the password: " ))
+   s=[]
+   s.extend(list(s1))
+   s.extend(list(s2))
+   s.extend(list(s3))
+   print(s)
+   random.shuffle(s)
+   print(s)
+   
